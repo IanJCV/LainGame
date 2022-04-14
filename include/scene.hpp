@@ -47,6 +47,7 @@ namespace Scene
             friend SceneData;
     };
     
+    // Scene asset data.
     struct SceneData
     {
         SceneData(Scene*);
