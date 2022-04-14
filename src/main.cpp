@@ -22,7 +22,6 @@ void
 error_callback(int,
 	       const char*);
 
-
 GLFWwindow* window;
 ALCdevice* device;
 ALCcontext* context;
@@ -79,7 +78,7 @@ init(void)
 		exit(-1);
 	}
 
-	gladLoadGL(glfwGetProcAddress);
+	gladLoadGL();
 }
 
 void

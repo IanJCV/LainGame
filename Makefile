@@ -4,9 +4,11 @@ CFILES   = $(shell find -name *.c)
 CXXFILES = $(shell find -name *.cpp)
 OBJECTS  = $(CFILES:.c=.o) $(CXXFILES:.cpp=.o)
 
+DEFINE   = -DTESTING -DVERSION=\"0.0.0\"
+
 CFLAGS   =
 CXXFLAGS =
-CPPFLAGS = -O3 -Iinclude -Idependencies -Wall -Wextra -Wpedantic
+CPPFLAGS = -O3 -Iinclude -Idependencies -Wall -Wextra -lm -lpthread -lglfw -lopenal -lOpenGL
 
 TARGET   = Lain
 
