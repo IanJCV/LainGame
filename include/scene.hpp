@@ -21,39 +21,39 @@
 
 namespace Scene
 {
-    class Scene;
-    class SceneData;
+	class Scene;
+	class SceneData;
 
-    class Scene
-    {
-        public:
-            Scene();
-            Scene(const char*);
-            ~Scene();
-            void Update();
-            void Draw();
+	class Scene
+	{
+		public:
+			Scene();
+			Scene(const char*);
+			~Scene();
+			void Update();
+			void Draw();
 
-            GameObject* GetObject(int); // Returns a pointer to the object at the given index.
-            GameObject* GetObjectCount(); // Returns the number of objects in the scene.
+			GameObject* GetObject(int); // Returns a pointer to the object at the given index.
+			GameObject* GetObjectCount(); // Returns the number of objects in the scene.
 
-            char* GetName(); // Returns the name of the scene.
+			char* GetName(); // Returns the name of the scene.
 
-        private:
-            void Init();
+		private:
+			void Init();
 
-            const char* name;
-            std::vector<int> m_Objects;
+			const char* name;
+			std::vector<int> m_Objects;
 
-            friend SceneData;
-    };
-    
-    // Scene asset data.
-    struct SceneData
-    {
-        SceneData(Scene*);
-        ~SceneData();
+			friend SceneData;
+	};
+	
+	// Scene asset data.
+	struct SceneData
+	{
+		SceneData(Scene*);
+		~SceneData();
 
-    };
+	};
 }
 
 #endif // SCENE_HPP_

@@ -22,22 +22,22 @@ class Component;
 
 class GameObject
 {
-    public:
-        GameObject();
-        GameObject(const char*);
-        ~GameObject();
-        void Update();
-        void LateUpdate();
-        void Draw();
+	public:
+		GameObject();
+		GameObject(const char*);
+		~GameObject();
+		void Update();
+		void LateUpdate();
+		void Draw();
 
-        const char* name;
+		const char* name;
 
-        void AddComponent(Component*);
-        void RemoveComponent(Component*);
-        template<typename T> T GetComponent(); // static_assert(std::is_base_of<BaseClass, T>::value, "");
+		void AddComponent(Component*);
+		void RemoveComponent(Component*);
+		template<typename T> T GetComponent(); // static_assert(std::is_base_of<BaseClass, T>::value, "");
 
-    private:
-        std::vector<Component*> m_Components;
+	private:
+		std::vector<Component*> m_Components;
 };
 
 class Component
