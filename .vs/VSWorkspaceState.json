@@ -1,0 +1,16 @@
+{
+  "ActiveTargetSystem": "Local Machine",
+  "MRUPresetsPerTargetSystem": {
+    "Local Machine": {
+      "configure": "x64-debug"
+    },
+    "WSL: Ubuntu": {
+      "configure": "linux-debug"
+    }
+  },
+  "ExpandedNodes": [
+    ""
+  ],
+  "SelectedNode": "\\CMakeLists.txt",
+  "PreviewInSolutionExplorer": false
+}
