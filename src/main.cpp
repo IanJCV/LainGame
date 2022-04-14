@@ -15,6 +15,8 @@
 extern void
 init(void);
 extern void
+bind(void);
+extern void
 end(void);
 void
 error_callback(int,
@@ -74,7 +76,16 @@ init(void)
 	else
 	{
 		fprintf(stderr, "OpenAL Error: %d\n", alcGetError(device));
+		exit(-1);
 	}
+
+	gladLoadGL(glfwGetProcAddress);
+}
+
+void
+bind(void)
+{
+	
 }
 
 void
