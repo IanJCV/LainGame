@@ -22,25 +22,32 @@
 namespace Scene
 {
 	class Scene;
-	class SceneData;
+	struct SceneData;
 
 	class Scene
 	{
 		public:
-			Scene();
+			Scene(void);
 			Scene(const char*);
-			~Scene();
-			void Update();
-			void Draw();
+			~Scene(void);
+			void Update(void);
+			void Draw(void);
 
+			// we should minimize getters/setters
+			// may as well be public...
 			GameObject* GetObject(int); // Returns a pointer to the object at the given index.
-			GameObject* GetObjectCount(); // Returns the number of objects in the scene.
+			GameObject* GetObjectCount(void); // Returns the number of objects in the scene.
 
-			char* GetName(); // Returns the name of the scene.
+			// just make it public
+			char* GetName(void); // Returns the name of the scene.
+		
 
 		private:
-			void Init();
+			// init should be public to allow resetting a scene without deleting the obj.
+			void Init(void);
 
+			// if we make these public...
+			// modification IS possible but our code shouldn't do that so no worries.
 			const char* name;
 			std::vector<int> m_Objects;
 
@@ -48,12 +55,23 @@ namespace Scene
 	};
 	
 	// Scene asset data.
-	struct SceneData
+	typedef struct SceneData
 	{
-		SceneData(Scene*);
-		~SceneData();
+		/*
+		 * maybe a group of data pointers?
+		 *
+		 * imagepng* image;
+		 * font* font;
+		 * wavfrm* wv;
+		 *
+		 * also this should be blindly coupled to Scene, meaning it doesn't know anything to maximize portability.
+		 * this would remove the need for freinding, but allowing freinds is a good way to push data then, removing blindness.
+		 * friending can be reduced with public data, where we agree it should only be modif by scenedat.
+		 */
 
-	};
+		SceneData(Scene*);
+		~SceneData(void);
+	} SceneData;
 }
 
-#endif // SCENE_HPP_
+#endif /* SCENE_HPP_ */

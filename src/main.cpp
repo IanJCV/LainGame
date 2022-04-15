@@ -1,3 +1,18 @@
+/* Copyright 2021-2022 by Ian JCV, 'Emil' Williams
+ *
+ * LainGame is libre software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, under version 3 of the License.
+ *
+ * LainGame is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with LainGame. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #include <stdio.h> // fprintf
 #include <stdlib.h> // atexit
 
@@ -15,8 +30,6 @@
 extern void
 init(void);
 extern void
-bind(void);
-extern void
 end(void);
 void
 error_callback(int,
@@ -31,7 +44,7 @@ main(void)
 {
 	init();
 
-	// we can turn this into a class or have a normal
+	// we can turn this into a class or have a normal:
 	//game_init();
 
 	game_loop();
@@ -78,13 +91,7 @@ init(void)
 		exit(-1);
 	}
 
-	gladLoadGL();
-}
-
-void
-bind(void)
-{
-	
+	gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
 }
 
 void

@@ -19,16 +19,17 @@
 #include <vector>
 
 class Component;
+class GameObject;
 
 class GameObject
 {
 	public:
-		GameObject();
+		GameObject(void);
 		GameObject(const char*);
-		~GameObject();
-		void Update();
-		void LateUpdate();
-		void Draw();
+		~GameObject(void);
+		void Update(void);
+		void LateUpdate(void);
+		void Draw(void);
 
 		const char* name;
 
@@ -37,6 +38,7 @@ class GameObject
 		template<typename T> T GetComponent(); // static_assert(std::is_base_of<BaseClass, T>::value, "");
 
 	private:
+		// )_ ) oh no
 		std::vector<Component*> m_Components;
 };
 
@@ -45,4 +47,4 @@ class Component
 
 };
 
-#endif // GAMEOBJECT_HPP_
+#endif /* GAMEOBJECT_HPP_ */

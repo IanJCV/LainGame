@@ -13,17 +13,4 @@
  * along with LainGame. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef GAME_HPP_
-#define GAME_HPP_
-
-#include <GLFW/glfw3.h>
-#include <AL/alc.h>
-
-extern GLFWwindow* window;
-extern ALCdevice* device;
-extern ALCcontext* context;
-
-extern void
-game_loop(void);
-
-#endif /* GAME_H_ */
+#include "scene.hpp"
