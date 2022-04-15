@@ -16,16 +16,16 @@
 #include "game.hpp"
 
 void
-game_loop(void)
+GameLoop(void)
 {
 	double last = glfwGetTime();
 	double delta = 0;
 
 	double accum = 0;
 
-	const double FPS = 60.0f;
+	//const double FPS = 60.0f;
 
-	while (!glfwWindowShouldClose(window))
+	while (!glfwWindowShouldClose(Window))
 	{
 		delta = glfwGetTime() - last;
 		last  = glfwGetTime();
@@ -44,7 +44,7 @@ game_loop(void)
 
 		//draw();
 
-		glfwSwapBuffers(window);
+		glfwSwapBuffers(Window);
 
 		//sleep(1.0f / FPS) / (end - last));
 	}

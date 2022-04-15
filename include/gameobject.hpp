@@ -38,7 +38,6 @@ class GameObject
 		template<typename T> T GetComponent(); // static_assert(std::is_base_of<BaseClass, T>::value, "");
 
 	private:
-		// )_ ) oh no
 		std::vector<Component*> m_Components;
 };
 

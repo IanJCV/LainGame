@@ -33,21 +33,15 @@ namespace Scene
 			void Update(void);
 			void Draw(void);
 
-			// we should minimize getters/setters
-			// may as well be public...
 			GameObject* GetObject(int); // Returns a pointer to the object at the given index.
 			GameObject* GetObjectCount(void); // Returns the number of objects in the scene.
 
-			// just make it public
 			char* GetName(void); // Returns the name of the scene.
 		
 
 		private:
-			// init should be public to allow resetting a scene without deleting the obj.
 			void Init(void);
 
-			// if we make these public...
-			// modification IS possible but our code shouldn't do that so no worries.
 			const char* name;
 			std::vector<int> m_Objects;
 
@@ -55,7 +49,7 @@ namespace Scene
 	};
 	
 	// Scene asset data.
-	typedef struct SceneData
+	struct SceneData
 	{
 		/*
 		 * maybe a group of data pointers?
@@ -71,7 +65,7 @@ namespace Scene
 
 		SceneData(Scene*);
 		~SceneData(void);
-	} SceneData;
+	};
 }
 
 #endif /* SCENE_HPP_ */

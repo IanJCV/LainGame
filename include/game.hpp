@@ -19,11 +19,11 @@
 #include <GLFW/glfw3.h>
 #include <AL/alc.h>
 
-extern GLFWwindow* window;
-extern ALCdevice* device;
-extern ALCcontext* context;
+extern GLFWwindow* Window;
+extern ALCdevice* Device;
+extern ALCcontext* Context;
 
 extern void
-game_loop(void);
+GameLoop(void);
 
 #endif /* GAME_H_ */

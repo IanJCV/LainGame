@@ -28,32 +28,31 @@
 #endif
 
 extern void
-init(void);
+Init(void);
 extern void
-end(void);
-void
-error_callback(int,
-	       const char*);
+End(void);
+extern void
+ErrorCallback(int, const char*);
 
-GLFWwindow* window;
-ALCdevice* device;
-ALCcontext* context;
+GLFWwindow* Window;
+ALCdevice* Device;
+ALCcontext* Context;
 
 int
 main(void)
 {
-	init();
+	Init();
 
 	// we can turn this into a class or have a normal:
 	//game_init();
 
-	game_loop();
+	GameLoop();
 
 	return 0;
 }
 
 void
-init(void)
+Init(void)
 {
 	// add file to input setting information
 
@@ -62,32 +61,32 @@ init(void)
 		exit(-1);
 	}
 
-	atexit(end);
+	atexit(End);
 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	window = glfwCreateWindow(1920, 1080, "Lain " VERSION, NULL, NULL);
+	Window = glfwCreateWindow(1920, 1080, "Lain " VERSION, NULL, NULL);
 
-	if (window == NULL)
+	if (Window == NULL)
 	{
 		exit(-1);
 	}
 
-	glfwMakeContextCurrent(window);
+	glfwMakeContextCurrent(Window);
 
-	device = alcOpenDevice(NULL);
+	Device = alcOpenDevice(NULL);
 
-	if (device)
+	if (Device)
 	{
-		context = alcCreateContext(device, NULL);
+		Context = alcCreateContext(Device, NULL);
 
-		alcMakeContextCurrent(context);
+		alcMakeContextCurrent(Context);
 	}
 	else
 	{
-		fprintf(stderr, "OpenAL Error: %d\n", alcGetError(device));
+		fprintf(stderr, "OpenAL Error: %d\n", alcGetError(Device));
 		exit(-1);
 	}
 
@@ -95,17 +94,16 @@ init(void)
 }
 
 void
-end(void)
+End(void)
 {
-	alcDestroyContext(context);
-	alcCloseDevice(device);
-	glfwDestroyWindow(window);
+	alcDestroyContext(Context);
+	alcCloseDevice(Device);
+	glfwDestroyWindow(Window);
 	glfwTerminate();
 }
 
 void
-error_callback(int error,
-	       const char* desc)
+ErrorCallback(int error, const char* desc)
 {
 	fprintf(stderr, "GLFW Error: %s\n", desc);
 }
