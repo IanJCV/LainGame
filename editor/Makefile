@@ -7,13 +7,13 @@ CFILES   = $(shell find -name $(SRC)/*.c)
 CXXFILES = $(shell find -name $(SRC)/*.cpp)
 OBJECTS  = $(CFILES:.c=.o) $(CXXFILES:.cpp=.o)
 
-DEFINE   = -DTESTING -DVERSION=\"0.0.0\"
+DEFINE   = -DEDITOR -DVERSION=\"0.0.0\"
 
 CFLAGS   = -std=c99
 CXXFLAGS = -std=c++14
 CPPFLAGS = -O3 -Iinclude -Idependencies -Wall -Wextra -lm -lpthread -lglfw -lopenal -lOpenGL
 
-TARGET   = Lain
+TARGET   = editor
 
 all: $(TARGET)
 
