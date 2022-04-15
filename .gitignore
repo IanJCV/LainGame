@@ -18,6 +18,7 @@ bin/*
 *.so
 *.dylib
 *.dll
+*.dll.a
 
 # Fortran module files
 *.mod
@@ -34,6 +35,4 @@ bin/*
 *.out
 *.app
 
-.vs
 out
-.vscode

@@ -23,7 +23,13 @@
 #include "game.hpp"
 
 #ifndef VERSION
-#warning No version provided.
+
+#ifdef _MSC_BUILD // Compiling with VC++
+	#pragma message ("No version provided.")
+#else // Using something else, probably GCC.
+	#warning No version provided.
+#endif
+
 #define VERSION ""
 #endif
 
