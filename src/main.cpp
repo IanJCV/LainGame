@@ -23,14 +23,12 @@
 #include "game.hpp"
 
 #ifndef VERSION
-
-#ifdef _MSC_BUILD // Compiling with VC++
-	#pragma message ("No version provided.")
-#else // Using something else, probably GCC.
-	#warning No version provided.
-#endif
-
-#define VERSION ""
+#	ifdef _MSC_BUILD // Compiling with VC++
+#		pragma message ("No version provided.")
+#	else // Using something else, probably GCC.
+#		warning No version provided.
+#	endif
+#	define VERSION ""
 #endif
 
 extern void
@@ -49,9 +47,6 @@ main(void)
 {
 	Init();
 
-	// we can turn this into a class or have a normal:
-	//game_init();
-
 	GameLoop();
 
 	return 0;
@@ -60,7 +55,7 @@ main(void)
 void
 Init(void)
 {
-	// add file to input setting information
+	FILE *settings, *basescene;
 
 	if (!glfwInit())
 	{
@@ -92,11 +87,13 @@ Init(void)
 	}
 	else
 	{
-		fprintf(stderr, "OpenAL Error: %d\n", alcGetError(Device));
+		fprintf(stderr, "OpenAL Error %d\n", alcGetError(Device));
 		exit(-1);
 	}
 
 	gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
+
+
 }
 
 void
@@ -111,5 +108,5 @@ End(void)
 void
 ErrorCallback(int error, const char* desc)
 {
-	fprintf(stderr, "GLFW Error: %s\n", desc);
+	fprintf(stderr, "GLFW Error %d: %s\n", error, desc);
 }

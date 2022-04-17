@@ -16,12 +16,16 @@
 #ifndef GAME_HPP_
 #define GAME_HPP_
 
+#include <vector>
 #include <GLFW/glfw3.h>
 #include <AL/alc.h>
+
+#include "scene.hpp"
 
 extern GLFWwindow* Window;
 extern ALCdevice* Device;
 extern ALCcontext* Context;
+extern std::vector<Scene::Scene> Scenes;
 
 extern void
 GameLoop(void);
