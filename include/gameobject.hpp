@@ -43,7 +43,14 @@ class GameObject
 
 class Component
 {
-
+	public:
+		virtual void Awake(void);		// Called on every Component first.
+		virtual void Start(void);		// Called on every Component after Awake.
+		virtual void Update(void);		// Called on every frame.
+		virtual void LateUpdate(void);	// 
+		virtual void OnEnable(void);	// 
+		virtual void OnDisable(void);	// 
+		virtual void OnDestroy(void);	// 
 };
 
 #endif /* GAMEOBJECT_HPP_ */

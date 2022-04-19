@@ -63,6 +63,8 @@ namespace Scene
 		 * friending can be reduced with public data, where we agree it should only be modif by scenedat.
 		 */
 
+		
+
 		SceneData(Scene*);
 		~SceneData(void);
 	};
