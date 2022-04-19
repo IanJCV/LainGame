@@ -14,7 +14,7 @@ Their thoughts -- binary, and their domain -- the storage servers, the wires, an
 Over the course of days, chipping away at the obfuscation...
 Visit all the places in the Wired, and try to find out what's happening, which way the wind's blowing.
 Figure out what you must do about it, why it pulls you so tightly in.
-Explore the Wired, a place that connects us all... Each server a place of it's own.
+Explore the Wired, a place that connects us all... Each server a place of its own.
 
 ### Gameplay
 
