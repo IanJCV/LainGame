@@ -1,0 +1,8 @@
+/* we can load many scenes at startup, and/or packages
+ *
+ * filename is relative to the super srcipt.
+ * load <filetype> <filename>
+ */
+
+load default.assets
+load default.scene

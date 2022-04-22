@@ -21,6 +21,7 @@
 #include <AL/alc.h>
 
 #include "game.hpp"
+#include "parse.h"
 
 #ifndef VERSION
 #	ifdef _MSC_BUILD // Compiling with VC++
@@ -93,7 +94,7 @@ Init(void)
 
 	gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
 
-
+	parse_start();
 }
 
 void
