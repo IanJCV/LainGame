@@ -38,7 +38,9 @@ make all
 ./Lain
 ```
 
-Report any issues on Github, or directly to a maintainer: \<emil@engineer.com\>
+Report any issues on Github, or directly to a maintainer:  
+\<emil@engineer.com\>  
+\<ian@ianjcv.com\>
 
 ## Licensing
 
